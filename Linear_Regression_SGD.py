@@ -1,10 +1,10 @@
 # Linear Regression With Stochastic Gradient Descent
 # Linear Regression is at its core used to estimate real values based on a continuous variable.  You aim to establish a relationship between independent and dependent variables by fitting a best fit line.  This best fit line is known as the regression line and is represented by a linear equation: Y = a * X + b
 # Stochastic Gradient Descent useful for very large data sets.  This is a variation of gradient descent where the update to the coefficients is performed for each training instance, rather than at the end of the batch of instances like in gradient descent.
-from random import seed
-from random import randrange
 from csv import reader
 from math import sqrt
+from random import seed
+from random import randrange
 
 # Load a CSV file, data set used
 def load_csv(filename):
@@ -111,7 +111,7 @@ def linear_regression_sgd(train, test, l_rate, n_epoch):
 # Linear Regression on wine quality data set
 seed(1)
 # load and prepare data
-filename = 'winequality-white.csv'
+filename = 'Data Sets for Code/red_wine_quality-lin_reg.csv'
 data_set = load_csv(filename)
 for i in range(len(data_set[0])):
 	str_column_to_float(data_set, i)
@@ -120,8 +120,8 @@ min_max = data_set_min_max(data_set)
 normalize_data_set(data_set, min_max)
 # evaluate algorithm
 n_folds = 5
-l_rate = 0.01
-n_epoch = 50
+l_rate = 0.01 # keep it small, can use 0.001 as well.
+n_epoch = 50  # number of epochs to train, using 50 epochs or exposures of the coefficients to the entire training data set.
 scores = evaluate_algorithm(data_set, linear_regression_sgd, n_folds, l_rate, n_epoch)
 print('Scores: %s' % scores)
 print('Mean RMSE: %.3f' % (sum(scores)/float(len(scores))))
