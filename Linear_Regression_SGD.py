@@ -1,56 +1,55 @@
 # Linear Regression With Stochastic Gradient Descent
 # Linear Regression is at its core used to estimate real values based on a continuous variable.  You aim to establish a relationship between independent and dependent variables by fitting a best fit line.  This best fit line is known as the regression line and is represented by a linear equation: Y = a * X + b
-# Stochastic Gradient Descent
-
+# Stochastic Gradient Descent useful for very large data sets.  This is a variation of gradient descent where the update to the coefficients is performed for each training instance, rather than at the end of the batch of instances like in gradient descent.
 from random import seed
 from random import randrange
 from csv import reader
 from math import sqrt
 
-# Load a CSV file
+# Load a CSV file, data set used
 def load_csv(filename):
-	dataset = list()
+	data_set = list()
 	with open(filename, 'r') as file:
 		csv_reader = reader(file)
 		for row in csv_reader:
 			if not row:
 				continue
-			dataset.append(row)
-	return dataset
+			data_set.append(row)
+	return data_set
 
 # Convert string column to float
-def str_column_to_float(dataset, column):
-	for row in dataset:
+def str_column_to_float(data_set, column):
+	for row in data_set:
 		row[column] = float(row[column].strip())
 
 # Find the min and max values for each column
-def dataset_minmax(dataset):
+def data_set_minmax(data_set):
 	minmax = list()
-	for i in range(len(dataset[0])):
-		col_values = [row[i] for row in dataset]
+	for i in range(len(data_set[0])):
+		col_values = [row[i] for row in data_set]
 		value_min = min(col_values)
 		value_max = max(col_values)
 		minmax.append([value_min, value_max])
 	return minmax
 
-# Rescale dataset columns to the range 0-1
-def normalize_dataset(dataset, minmax):
-	for row in dataset:
+# Rescale data set columns to the range 0-1
+def normalize_data_set(data_set, minmax):
+	for row in data_set:
 		for i in range(len(row)):
 			row[i] = (row[i] - minmax[i][0]) / (minmax[i][1] - minmax[i][0])
 
-# Split a dataset into k folds
-def cross_validation_split(dataset, n_folds):
-	dataset_split = list()
-	dataset_copy = list(dataset)
-	fold_size = int(len(dataset) / n_folds)
+# Split a data set into k folds
+def cross_validation_split(data_set, n_folds):
+	data_set_split = list()
+	data_set_copy = list(data_set)
+	fold_size = int(len(data_set) / n_folds)
 	for i in range(n_folds):
 		fold = list()
 		while len(fold) < fold_size:
-			index = randrange(len(dataset_copy))
-			fold.append(dataset_copy.pop(index))
-		dataset_split.append(fold)
-	return dataset_split
+			index = randrange(len(data_set_copy))
+			fold.append(data_set_copy.pop(index))
+		data_set_split.append(fold)
+	return data_set_split
 
 # Calculate root mean squared error
 def rmse_metric(actual, predicted):
@@ -62,8 +61,8 @@ def rmse_metric(actual, predicted):
 	return sqrt(mean_error)
 
 # Evaluate an algorithm using a cross validation split
-def evaluate_algorithm(dataset, algorithm, n_folds, *args):
-	folds = cross_validation_split(dataset, n_folds)
+def evaluate_algorithm(data_set, algorithm, n_folds, *args):
+	folds = cross_validation_split(data_set, n_folds)
 	scores = list()
 	for fold in folds:
 		train_set = list(folds)
@@ -109,20 +108,20 @@ def linear_regression_sgd(train, test, l_rate, n_epoch):
 		predictions.append(yhat)
 	return(predictions)
 
-# Linear Regression on wine quality dataset
+# Linear Regression on wine quality data set
 seed(1)
 # load and prepare data
 filename = 'winequality-white.csv'
-dataset = load_csv(filename)
-for i in range(len(dataset[0])):
-	str_column_to_float(dataset, i)
+data_set = load_csv(filename)
+for i in range(len(data_set[0])):
+	str_column_to_float(data_set, i)
 # normalize
-minmax = dataset_minmax(dataset)
-normalize_dataset(dataset, minmax)
+minmax = data_set_minmax(data_set)
+normalize_data_set(data_set, minmax)
 # evaluate algorithm
 n_folds = 5
 l_rate = 0.01
 n_epoch = 50
-scores = evaluate_algorithm(dataset, linear_regression_sgd, n_folds, l_rate, n_epoch)
+scores = evaluate_algorithm(data_set, linear_regression_sgd, n_folds, l_rate, n_epoch)
 print('Scores: %s' % scores)
 print('Mean RMSE: %.3f' % (sum(scores)/float(len(scores))))
