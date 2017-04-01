@@ -17,26 +17,26 @@ def load_csv(filename):
 			data_set.append(row)
 	return data_set
 
-# Convert string column to float
+# Convert string column to float, conversion necessary to treat data as numerical
 def str_column_to_float(data_set, column):
 	for row in data_set:
 		row[column] = float(row[column].strip())
 
-# Find the min and max values for each column
-def data_set_minmax(data_set):
-	minmax = list()
+# Iterate through data set and append min_max with the min and max to be used later
+def data_set_min_max(data_set):
+	min_max = list()
 	for i in range(len(data_set[0])):
 		col_values = [row[i] for row in data_set]
-		value_min = min(col_values)
-		value_max = max(col_values)
-		minmax.append([value_min, value_max])
-	return minmax
+		min_value = min(col_values)
+		max_value = max(col_values)
+		min_max.append([min_value, max_value])
+	return min_max
 
-# Rescale data set columns to the range 0-1
-def normalize_data_set(data_set, minmax):
+# Normalizing the data set, this is not necessary but good practice because it will allow the algorithm to reach the minimum cost faster if the shape of the cost function is not skewed and distorted.  Here we return values from 0,1
+def normalize_data_set(data_set, min_max):
 	for row in data_set:
 		for i in range(len(row)):
-			row[i] = (row[i] - minmax[i][0]) / (minmax[i][1] - minmax[i][0])
+			row[i] = (row[i] - min_max[i][0]) / (min_max[i][1] - min_max[i][0])
 
 # Split a data set into k folds
 def cross_validation_split(data_set, n_folds):
@@ -116,8 +116,8 @@ data_set = load_csv(filename)
 for i in range(len(data_set[0])):
 	str_column_to_float(data_set, i)
 # normalize
-minmax = data_set_minmax(data_set)
-normalize_data_set(data_set, minmax)
+min_max = data_set_min_max(data_set)
+normalize_data_set(data_set, min_max)
 # evaluate algorithm
 n_folds = 5
 l_rate = 0.01
