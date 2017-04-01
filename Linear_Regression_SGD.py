@@ -38,7 +38,7 @@ def normalize_data_set(data_set, min_max):
 		for i in range(len(row)):
 			row[i] = (row[i] - min_max[i][0]) / (min_max[i][1] - min_max[i][0])
 
-# Split a data set into k folds
+# Split a data set into k folds. In k-fold cross-validation, the original sample is randomly partitioned into k equal sized subsamples. Of the k subsamples, a single subsample is retained as the validation data for testing the model, and the remaining k − 1 subsamples are used as training data. The cross-validation process is then repeated k times (the folds), with each of the k subsamples used exactly once as the validation data. The k results from the folds can then be averaged to produce a single estimation. The advantage of this method over repeated random sub-sampling is that all observations are used for both training and validation, and each observation is used for validation exactly once.  Using a n_folds of 5 in this function.
 def cross_validation_split(data_set, n_folds):
 	data_set_split = list()
 	data_set_copy = list(data_set)
@@ -51,7 +51,7 @@ def cross_validation_split(data_set, n_folds):
 		data_set_split.append(fold)
 	return data_set_split
 
-# Calculate root mean squared error
+# Calculate root mean squared error, RSME is the square root of the variance of the residuals or the absolute measure of fit. It indicates the absolute fit of the model to the data–how close the observed data points are to the model’s predicted values.
 def rmse_metric(actual, predicted):
 	sum_error = 0.0
 	for i in range(len(actual)):
