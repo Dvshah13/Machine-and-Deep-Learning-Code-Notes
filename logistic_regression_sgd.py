@@ -1,3 +1,5 @@
+# Logistic Regression - used in classification to estimate discrete values (binary values like 0/1, yes/no, true/false) based on a given set of independent variables.  It predicts the probability of an event by fitting data to a logit function.  Also known as logit regression.  Since it predicts the probability, its output lies between 0 to 1.  The logistic function (logit) is also called the sigmoid function.  It’s an S-shaped curve that can take any real-valued number and map it into a value between 0 and 1 but never exactly at those limits.
+
 # Logistic Regression on Diabetes Data set
 from csv import reader
 from math import exp
