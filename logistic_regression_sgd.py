@@ -6,7 +6,7 @@ from math import exp
 from random import seed
 from random import randrange
 
-# Load a CSV file
+# Loading CSV file, in this example it's the diabetes.csv file located in the Data Sets for Code folder
 def load_csv(filename):
 	data_set = list()
 	with open(filename, 'r') as file:
@@ -17,12 +17,12 @@ def load_csv(filename):
 			data_set.append(row)
 	return data_set
 
-# Convert string column to float
+# Convert string column to float, necessary for evaluation
 def str_column_to_float(data_set, column):
 	for row in data_set:
 		row[column] = float(row[column].strip())
 
-# Find the min and max values for each column
+# Finding the min and max values for each column and appending them to a list which will be used later
 def data_set_min_max(data_set):
 	min_max = list()
 	for i in range(len(data_set[0])):
@@ -32,13 +32,13 @@ def data_set_min_max(data_set):
 		min_max.append([min_value, max_value])
 	return min_max
 
-# Rescale data set columns to the range 0-1
+# Rescale data set columns to the range 0-1, necessary for classification
 def normalize_data_set(data_set, min_max):
 	for row in data_set:
 		for i in range(len(row)):
 			row[i] = (row[i] - min_max[i][0]) / (min_max[i][1] - min_max[i][0])
 
-# Split a data set into k folds
+# Split a data set into k folds. In k-fold cross-validation, the original sample is randomly partitioned into k equal sized subsamples. Of the k subsamples, a single subsample is retained as the validation data for testing the model, and the remaining k − 1 subsamples are used as training data. The cross-validation process is then repeated k times (the folds), with each of the k subsamples used exactly once as the validation data. The k results from the folds can then be averaged to produce a single estimation. The advantage of this method over repeated random sub-sampling is that all observations are used for both training and validation, and each observation is used for validation exactly once.  Using a n_folds of 5 in this function.
 def cross_validation_split(data_set, n_folds):
 	data_set_split = list()
 	data_set_copy = list(data_set)
@@ -110,7 +110,7 @@ def logistic_regression(train, test, l_rate, n_epoch):
 # Test the logistic regression algorithm on the diabetes data set
 seed(1)
 # load and prepare data
-filename = 'Data Sets for Code/diabetes-log_reg.csv'
+filename = 'Data Sets for Code/diabetes.csv'
 data_set = load_csv(filename)
 for i in range(len(data_set[0])):
 	str_column_to_float(data_set, i)
