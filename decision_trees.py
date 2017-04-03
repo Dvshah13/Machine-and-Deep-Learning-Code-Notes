@@ -1,4 +1,4 @@
-# Decision Trees/CART is a supervised learning algorithm that is mostly used for classification purposes.  But it also works for both categorical and continuous dependent variables.  In this algorithm, you are trying to split the population into two or more homogeneous sets.  This is done based on the most significant attributes/independent variables to make as distinct groups as possible.  Although they are mostly used for classification purposes, you can also use it for regression predictive modeling problems.  The CART algorithm provides a foundation for important algorithms like bagged decision trees, random forests and boosted decisions trees.  The representation for the CART model is a binary tree.  Each root node represents a single input variable (x) and a split point on that variable (assuming the variable is numeric).  The leaf nodes of the tree contain an output variable (y) which is used to make a prediction
+# Decision Trees/CART, supervised learning algorithm mostly used for classification purposes but also works for both categorical and continuous dependent variables. In this algorithm, you are trying to split the population into two or more homogeneous sets.  This is done based on the most significant attributes/independent variables to make as distinct groups as possible also known as splitting the data based on the feature that results in the largest information gain.  Although mostly used for classification purposes, you can also use it for regression predictive modeling problems. The CART algorithm provides a foundation for important algorithms like bagged decision trees, random forests and boosted decisions trees.  The representation for the CART model is a binary tree.  Each root node represents a single input variable (x) and a split point on that variable (assuming variable is numeric). The leaf nodes of the tree contains an output variable (y) which is used to make a prediction
 
 # Decision Tree/Classification and Regression Tree(CART) Algorithm implementation using banknote database from UCI Machine Learning Repository
 from random import seed
@@ -69,6 +69,7 @@ def test_split(index, value, dataset):
 
 # Calculate the Gini index for a split dataset which is representative of the cost function as seen in many ML algorithms.  For classification the Gini cost function is used which provides an indication of how pure the leaf nodes are (how mixed the training data assigned to each node is).
 # G = sum (pk * (1 - pk)).  G is the Gini cost over all classes, pk are the number of training instances with class k in the rectangle of interest.
+# For splitting some common measures include the gini index, entropy and classification error.
 def gini_index(groups, class_values):
 	gini = 0.0
 	for class_value in class_values:
@@ -80,7 +81,7 @@ def gini_index(groups, class_values):
 			gini += (proportion * (1.0 - proportion))
 	return gini
 
-# Select the best split point for a dataset
+# Select the best split point for a dataset again maximizing information gain
 def get_split(dataset):
 	class_values = list(set(row[-1] for row in dataset))
 	b_index, b_value, b_score, b_groups = 999, 999, 999, None
@@ -92,32 +93,32 @@ def get_split(dataset):
 				b_index, b_value, b_score, b_groups = index, row[index], gini, groups
 	return {'index':b_index, 'value':b_value, 'groups':b_groups}
 
-# Create a terminal node value
-def to_terminal(group):
+# Create a terminal node value, this is where there are no further decision nodes. Terminal nodes depict the final outcomes of the decision making process.
+def terminal_node(group):
 	outcomes = [row[-1] for row in group]
 	return max(set(outcomes), key=outcomes.count)
 
-# Create child splits for a node or make terminal
+# Create child splits for a node or make terminal again making splits till we reach the terminal nodes
 def split(node, max_depth, min_size, depth):
 	left, right = node['groups']
 	del(node['groups'])
 	# check for a no split
 	if not left or not right:
-		node['left'] = node['right'] = to_terminal(left + right)
+		node['left'] = node['right'] = terminal_node(left + right)
 		return
 	# check for max depth
 	if depth >= max_depth:
-		node['left'], node['right'] = to_terminal(left), to_terminal(right)
+		node['left'], node['right'] = terminal_node(left), terminal_node(right)
 		return
 	# process left child
 	if len(left) <= min_size:
-		node['left'] = to_terminal(left)
+		node['left'] = terminal_node(left)
 	else:
 		node['left'] = get_split(left)
 		split(node['left'], max_depth, min_size, depth+1)
 	# process right child
 	if len(right) <= min_size:
-		node['right'] = to_terminal(right)
+		node['right'] = terminal_node(right)
 	else:
 		node['right'] = get_split(right)
 		split(node['right'], max_depth, min_size, depth+1)
