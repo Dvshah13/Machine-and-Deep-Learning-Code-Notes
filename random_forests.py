@@ -1,11 +1,12 @@
-# Bagging is an ensemble method is a technique that combines the predictions from multiple machine learning algorithms together to make more accurate predictions than any individual model.
-# Bootstrap Aggregation is a general procedure that can be used to reduce the variance for those algorithm that have high variance.
-### Please note: This code is very similar to decision_trees.py, bagging and bootstrap aggregaton can be found on starting on Line 173  ###
+# Random Forests considered an improvement over bagged decision trees, changes the algorithm for the way that the sub-trees are learned so that the resulting predictions from all of the subtrees have less correlation.  Decision Trees/CART choose which variable to split on using a greedy algorithm that minimizes error. Even with Bagging, the decision trees have a lot of structural similarities and in turn have high correlation in their predictions.  Random Forests changes this procedure so that the learning algorithm is limited to a random sample of features of which to search. The number of features that can be searched at each split point (m) must be specified as a parameter to the algorithm.  For classification a good default is m = sqrt(input variables)
 
-# Bagging Algorithm on the Sonar dataset
+### Please note: This code is very similar to bagging_decision_trees.py which borrows from decision_trees.py, random forest algorithm application can be found on line 182  ###
+
+# Random Forest Algorithm on Sonar Data set
 from random import seed
 from random import randrange
 from csv import reader
+from math import sqrt
 
 # Load a CSV file
 def load_csv(filename):
@@ -98,14 +99,17 @@ def gini_index(groups, class_values):
 			gini += (proportion * (1.0 - proportion))
 	return gini
 
-# Select the best split point for a dataset again maximizing information gain
-def get_split(dataset):
+# Select the best split point for a dataset again maximizing information gain.  Here we also pass in n_features make use of random selection of feature subset
+def get_split(dataset, n_features):
 	class_values = list(set(row[-1] for row in dataset))
 	b_index, b_value, b_score, b_groups = 999, 999, 999, None
-	for index in range(len(dataset[0])-1):
+	features = list()
+	while len(features) < n_features:
+		index = randrange(len(dataset[0])-1)
+		if index not in features:
+			features.append(index)
+	for index in features:
 		for row in dataset:
-		# for i in range(len(dataset)):
-		# 	row = dataset[randrange(len(dataset))]
 			groups = test_split(index, row[index], dataset)
 			gini = gini_index(groups, class_values)
 			if gini < b_score:
@@ -117,8 +121,8 @@ def to_terminal(group):
 	outcomes = [row[-1] for row in group]
 	return max(set(outcomes), key=outcomes.count)
 
-# Create child splits for a node or make terminal again making splits till we reach the terminal nodes
-def split(node, max_depth, min_size, depth):
+# Create child splits for a node or make terminal again making splits till we reach the terminal nodes.  Again taking into account n_features
+def split(node, max_depth, min_size, n_features, depth):
 	left, right = node['groups']
 	del(node['groups'])
 	# check for a no split
@@ -133,19 +137,19 @@ def split(node, max_depth, min_size, depth):
 	if len(left) <= min_size:
 		node['left'] = to_terminal(left)
 	else:
-		node['left'] = get_split(left)
-		split(node['left'], max_depth, min_size, depth+1)
+		node['left'] = get_split(left, n_features)
+		split(node['left'], max_depth, min_size, n_features, depth+1)
 	# process right child
 	if len(right) <= min_size:
 		node['right'] = to_terminal(right)
 	else:
-		node['right'] = get_split(right)
-		split(node['right'], max_depth, min_size, depth+1)
+		node['right'] = get_split(right, n_features)
+		split(node['right'], max_depth, min_size, n_features, depth+1)
 
 # Build a decision tree
-def build_tree(train, max_depth, min_size):
-	root = get_split(train)
-	split(root, max_depth, min_size, 1)
+def build_tree(train, max_depth, min_size, n_features):
+	root = get_split(train, n_features)
+	split(root, max_depth, min_size, n_features, 1)
 	return root
 
 # Make a prediction with a decision tree, using isinstance to check if object is of object type specified otherwise returns false and else in our model
@@ -175,33 +179,34 @@ def bagging_predict(trees, row):
 	predictions = [predict(tree, row) for tree in trees]
 	return max(set(predictions), key=predictions.count)
 
-# Bootstrap Aggregation Algorithm, function is responsible for creating the samples of the training dataset, training a decision tree on each, then making predictions on the test dataset using the list of bagged trees.
-def bagging(train, test, max_depth, min_size, sample_size, n_trees):
+# Random Forest Algorithm, here we have the implementation. We also can see the difference from bagging as here we how many features to search over to find the best feature which was defined in the split. In this case it's sqrt(p) for classification. For regression 1/3*P.  Thus, during tree creation a random number of features are chosen from all available features and the best feature that splits the data is chosen
+def random_forest(train, test, max_depth, min_size, sample_size, n_trees, n_features):
 	trees = list()
 	for i in range(n_trees):
 		sample = subsample(train, sample_size)
-		tree = build_tree(sample, max_depth, min_size)
+		tree = build_tree(sample, max_depth, min_size, n_features)
 		trees.append(tree)
 	predictions = [bagging_predict(trees, row) for row in test]
 	return(predictions)
 
-# Test bagging on the sonar dataset
+# Test the random forest algorithm
 seed(1) # generate random number
 # load and prepare data
 filename = 'Data Sets for Code/signals_sonar_classify.csv'
 dataset = load_csv(filename)
 # convert string attributes to integers
-for i in range(len(dataset[0])-1):
+for i in range(0, len(dataset[0])-1):
 	str_column_to_float(dataset, i)
 # convert class column to integers
 str_column_to_int(dataset, len(dataset[0])-1)
 # evaluate algorithm
 n_folds = 5
-max_depth = 6
-min_size = 2
-sample_size = 0.50
-for n_trees in [1, 5, 10, 50]:
-	scores = evaluate_algorithm(dataset, bagging, n_folds, max_depth, min_size, sample_size, n_trees)
+max_depth = 10
+min_size = 1
+sample_size = 1.0
+n_features = int(sqrt(len(dataset[0])-1))
+for n_trees in [1, 5, 10]:
+	scores = evaluate_algorithm(dataset, random_forest, n_folds, max_depth, min_size, sample_size, n_trees, n_features)
 	print('Trees: %d' % n_trees)
 	print('Scores: %s' % scores)
 	print('Mean Accuracy: %.3f%%' % (sum(scores)/float(len(scores))))
