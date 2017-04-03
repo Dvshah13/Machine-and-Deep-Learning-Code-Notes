@@ -150,3 +150,19 @@ def decision_tree(train, test, max_depth, min_size):
 		prediction = predict(tree, row)
 		predictions.append(prediction)
 	return(predictions)
+
+# Testing done on signals_sonar_classify data set
+seed(1)
+# load and prepare data
+filename = 'Data Sets for Code/signals_sonar_classify.csv'
+dataset = load_csv(filename)
+# convert string attributes to integers
+for i in range(len(dataset[0])):
+	str_column_to_float(dataset, i)
+# evaluate algorithm
+n_folds = 5
+max_depth = 5
+min_size = 10
+scores = evaluate_algorithm(dataset, decision_tree, n_folds, max_depth, min_size)
+print('Scores: %s' % scores)
+print('Mean Accuracy: %.3f%%' % (sum(scores)/float(len(scores))))
