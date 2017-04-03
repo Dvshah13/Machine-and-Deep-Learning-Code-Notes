@@ -11,8 +11,9 @@
 5. bagging_decision_trees.py - Demonstration of bagging and bootstrap aggregation using the signals_sonar_classify.csv data set (provided by UCI data repository)
 6. random_forests.py - Demonstration of the random forest algorithm using the signals_sonar_classify.csv data set (provided by UCI data repository)
 7. naive_bayes.py - Naive Bayes algorithm using the diabetes.csv data set (provided by UCI data repository)
-7. classification_tensorflow.py - Classification with tensorflow using the MNIST data set filtered and obtained with the input_data.py file
-8. ex1_tensorflow.py - Basic file outlining structure (weights, biases, tensorflow structure) using tensorflow
+8. k-nearest_neighbors.py - K-Nearest Neighbors algorithm using the iris.data classic data set
+9. classification_tensorflow.py - Classification with tensorflow using the MNIST data set filtered and obtained with the input_data.py file
+10. ex1_tensorflow.py - Basic file outlining structure (weights, biases, tensorflow structure) using tensorflow
 #### Deep Learning Scripts
 1. basic_imageclass.py - Image Classification using Convolutional Neural Network with tensorflow using the MNIST data set filtered and obtained with the input_data.py file
 2. basic_ann_tensforflow.py - First neural network using tensorflow, numpy and plotted with matplotlib
