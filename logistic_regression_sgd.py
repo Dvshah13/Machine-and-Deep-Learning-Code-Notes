@@ -51,7 +51,7 @@ def cross_validation_split(data_set, n_folds):
 		data_set_split.append(fold)
 	return data_set_split
 
-# Calculate accuracy percentage
+# Calculate accuracy percentage based on actual vs predicted values.
 def accuracy_metric(actual, predicted):
 	correct = 0
 	for i in range(len(actual)):
