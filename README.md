@@ -21,11 +21,12 @@
 3. optimizers_notes_tensorflow.py - Notes on using optimizers in tensorflow
 4. overfitting_tensorflow.py - Dealing with overfitting data using the dropout function in tensorflow
 5. placeholders_tensorflow.py - How to use placeholder variables and pass values on after output
-6. rnn_lstm_text_generation_keras.py - LSTM Recurrent Neural Net text generation using keras and sherlock_asib.txt data set (provided by Project Gutenburg) 
-7. rnn_classification_tensorflow - Classification with Recurrent Neural Net using tensorflow and MNIST data set
-8. rnn_regression_tensorflow - Regression with Recurrent Neural Net using tensorflow and MNIST data set
-9. save_restore_tensorflow - Saving and restoring variables using tensorflow
-10. session_init_tensorflow - Basic session initialization using tensorflow
-11. variables_tensorflow - dealing with and initializing variables using tensorflow
-12. visualize_net_basic_tensorflow.py - basic version of visualizing network using tensorflow's built in tool called tensorboard
-13. visualizing_net_added_features_tensorflow.py - includes some added features, visualizing network using tensorflow's built in tool called tensorboard
+6. cnn_rnn_lstm_sequence_classification_keras.py - Convolutional Neural Net with LSTM Recurrent Neural Net for sequence classification using the IMDB movie review data set which is accessed using a built in Keras function
+7. rnn_lstm_text_generation_keras.py - LSTM Recurrent Neural Net text generation using keras and sherlock_asib.txt data set (provided by Project Gutenburg) 
+8. rnn_classification_tensorflow - Classification with Recurrent Neural Net using tensorflow and MNIST data set
+9. rnn_regression_tensorflow - Regression with Recurrent Neural Net using tensorflow and MNIST data set
+10. save_restore_tensorflow - Saving and restoring variables using tensorflow
+11. session_init_tensorflow - Basic session initialization using tensorflow
+12. variables_tensorflow - dealing with and initializing variables using tensorflow
+13. visualize_net_basic_tensorflow.py - basic version of visualizing network using tensorflow's built in tool called tensorboard
+14. visualizing_net_added_features_tensorflow.py - includes some added features, visualizing network using tensorflow's built in tool called tensorboard
