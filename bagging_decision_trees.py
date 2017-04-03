@@ -1,6 +1,6 @@
 # Bagging is an ensemble method is a technique that combines the predictions from multiple machine learning algorithms together to make more accurate predictions than any individual model.
 # Bootstrap Aggregation is a general procedure that can be used to reduce the variance for those algorithm that have high variance.
-### Please note: This code is very similar to decision_trees.py, bagging and bootstrap aggregaton can be found on starting on Line 171  ###
+### Please note: This code is very similar to decision_trees.py, bagging and bootstrap aggregaton can be found on starting on Line 173  ###
 
 # Bagging Algorithm on the Sonar dataset
 from random import seed
