@@ -170,12 +170,12 @@ def subsample(dataset, ratio):
 		sample.append(dataset[index])
 	return sample
 
-# Make a prediction with a list of bagged trees
+# Make a prediction with a list of bagged trees, function is responsible for making a prediction with each decision tree and combining the predictions into a single return value. This is achieved by selecting the most common prediction from the list of predictions made by the bagged trees
 def bagging_predict(trees, row):
 	predictions = [predict(tree, row) for tree in trees]
 	return max(set(predictions), key=predictions.count)
 
-# Bootstrap Aggregation Algorithm
+# Bootstrap Aggregation Algorithm, function is responsible for creating the samples of the training dataset, training a decision tree on each, then making predictions on the test dataset using the list of bagged trees.
 def bagging(train, test, max_depth, min_size, sample_size, n_trees):
 	trees = list()
 	for i in range(n_trees):
@@ -188,7 +188,7 @@ def bagging(train, test, max_depth, min_size, sample_size, n_trees):
 # Test bagging on the sonar dataset
 seed(1)
 # load and prepare data
-filename = 'sonar.all-data.csv'
+filename = 'Data Sets for Code/signals_sonar_classify.csv'
 dataset = load_csv(filename)
 # convert string attributes to integers
 for i in range(len(dataset[0])-1):
