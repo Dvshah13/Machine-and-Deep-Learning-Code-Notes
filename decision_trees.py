@@ -152,7 +152,7 @@ def decision_tree(train, test, max_depth, min_size):
 	return(predictions)
 
 # Testing done on signals_sonar_classify data set
-seed(1)
+seed(1) # generate random number
 # load and prepare data
 filename = 'Data Sets for Code/signals_sonar_classify.csv'
 dataset = load_csv(filename)

@@ -186,7 +186,7 @@ def bagging(train, test, max_depth, min_size, sample_size, n_trees):
 	return(predictions)
 
 # Test bagging on the sonar dataset
-seed(1)
+seed(1) # generate random number
 # load and prepare data
 filename = 'Data Sets for Code/signals_sonar_classify.csv'
 dataset = load_csv(filename)
