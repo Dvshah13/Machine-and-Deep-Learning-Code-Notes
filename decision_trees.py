@@ -5,7 +5,7 @@ from random import seed
 from random import randrange
 from csv import reader
 
-# Load a CSV file
+# Load CSV file
 def load_csv(filename):
 	file = open(filename, "rb")
 	lines = reader(file)

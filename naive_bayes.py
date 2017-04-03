@@ -6,7 +6,7 @@ import csv
 import random
 import math
 
-# Loading CSV file
+# Load CSV file
 def load_csv(filename):
 	lines = csv.reader(open(filename, "rb"))
 	dataset = list(lines)

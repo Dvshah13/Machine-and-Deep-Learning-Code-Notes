@@ -8,7 +8,7 @@ from random import randrange
 from csv import reader
 from math import sqrt
 
-# Load a CSV file
+# Load CSV file
 def load_csv(filename):
 	dataset = list()
 	with open(filename, 'r') as file:
