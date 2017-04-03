@@ -6,8 +6,9 @@
 #### Machine Learning Scripts
 1. linear_regression_sgd.py - Linear Regression with Stoichastic Gradient Descent using the red_wine_quality.csv data set (provided by UCI data repository)
 2. logistic_regression_sgd.py - Logistic Regression with Stoichastic Gradient Descent using the diabetes.csv data set (provided by UCI data repository)
-3. decision_tees.py - Decision Tree using the  data set (provided by UCI data repository)
+3. decision_tees.py - Decision Tree using the signal_sonar_classify.csv data set (provided by UCI data repository)
 4. decision_trees_xg_boosting.py - Demonstration of XG Boosting and plotting with scikit learn, pandas, numpy and matplotlib using the train_xg_boost.csv (provided by Kaggle)
+5. bagging_decision_trees.py - Deonstration of bagging and bootstrap aggregation using the signals_sonar_classify.csv data set (provided by UCI data repository)
 4. classification_tensorflow.py - Classification with tensorflow using the MNIST data set filtered and obtained with the input_data.py file
 5. ex1_tensorflow.py - Basic file outlining structure (weights, biases, tensorflow structure) using tensorflow
 #### Deep Learning Scripts
