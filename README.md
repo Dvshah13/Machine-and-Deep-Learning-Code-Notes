@@ -1,7 +1,7 @@
 # Machine and Deep Learning Code and Notes
 #### Code and Notes on Machine and Deep Learning Algorithms/Techniques using various python libraries. 
 #### Credit must be given to Python Machine Learning by Sebastian Raschka, Machine Learning Mastery by Jason Brownlee, Scikit Learn Documentation, Introduction to Machine Learning with Python by Andreas C Muller and Sarah Guido, Tensorflow Site and Documentation.  These resources were instrumental in my learning process.
-### Please Note:  Most of the python scripts are labeled with algorithm(s) and libraries used.  Notes and my thought process are commented at the top and between code.  Data sets can be found in MNIST and Data Sets for Code folder (provided by UCI data repository and Kaggle).  Table of contents will indicate which algorithm(s), description, libraries and data set is being used for algorithm.
+### Please Note:  Most of the python scripts are labeled with algorithm(s) and libraries used.  Notes and my thought process are commented at the top and between code.  Data sets can be found in MNIST and Data Sets for Code folder (provided by UCI data repository, Kaggle and Project Gutenburg).  Table of contents will indicate which algorithm(s), description, libraries and data set is being used for algorithm.
 ### Table of Contents
 #### Machine Learning Scripts
 1. linear_regression_sgd.py - Linear Regression with Stoichastic Gradient Descent using the red_wine_quality.csv data set (provided by UCI data repository)
@@ -21,10 +21,11 @@
 3. optimizers_notes_tensorflow.py - Notes on using optimizers in tensorflow
 4. overfitting_tensorflow.py - Dealing with overfitting data using the dropout function in tensorflow
 5. placeholders_tensorflow.py - How to use placeholder variables and pass values on after output
-6. rnn_classification_tensorflow - Classification with Recurrent Neural Net using tensorflow and MNIST data set
-7. rnn_regression_tensorflow - Regression with Recurrent Neural Net using tensorflow and MNIST data set
-8. save_restore_tensorflow - Saving and restoring variables using tensorflow
-9. session_init_tensorflow - Basic session initialization using tensorflow
-10. variables_tensorflow - dealing with and initializing variables using tensorflow
-11. visualize_net_basic_tensorflow.py - basic version of visualizing network using tensorflow's built in tool called tensorboard
-12. visualizing_net_added_features_tensorflow.py - includes some added features, visualizing network using tensorflow's built in tool called tensorboard
+6. rnn_lstm_text_generation_keras.py - LSTM Recurrent Neural Net text generation using keras and sherlock_asib.txt data set (provided by Project Gutenburg) 
+7. rnn_classification_tensorflow - Classification with Recurrent Neural Net using tensorflow and MNIST data set
+8. rnn_regression_tensorflow - Regression with Recurrent Neural Net using tensorflow and MNIST data set
+9. save_restore_tensorflow - Saving and restoring variables using tensorflow
+10. session_init_tensorflow - Basic session initialization using tensorflow
+11. variables_tensorflow - dealing with and initializing variables using tensorflow
+12. visualize_net_basic_tensorflow.py - basic version of visualizing network using tensorflow's built in tool called tensorboard
+13. visualizing_net_added_features_tensorflow.py - includes some added features, visualizing network using tensorflow's built in tool called tensorboard
