@@ -39,7 +39,7 @@ def accuracy_metric(actual, predicted):
 	return correct / float(len(actual)) * 100.0
 
 # Evaluate an algorithm using a cross validation split
-def evaluate_algorithm(dataset, algorithm, n_folds, *args):
+def evaluate_algorithm(dataset, algorithm, n_folds, *args):  # using *args since it will allow you pass an arbitrary number of arguments to your function.
 	folds = cross_validation_split(dataset, n_folds)
 	scores = list()
 	for fold in folds:
