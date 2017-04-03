@@ -123,13 +123,13 @@ def split(node, max_depth, min_size, depth):
 		node['right'] = get_split(right)
 		split(node['right'], max_depth, min_size, depth+1)
 
-# Build a decision tree
+# Building the decision tree
 def build_tree(train, max_depth, min_size):
 	root = get_split(train)
 	split(root, max_depth, min_size, 1)
 	return root
 
-# Make a prediction with a decision tree
+# Make a prediction with a decision tree, using isinstance to check if object is of object type specified otherwise returns false and else in our model
 def predict(node, row):
 	if row[node['index']] < node['value']:
 		if isinstance(node['left'], dict):
@@ -142,7 +142,7 @@ def predict(node, row):
 		else:
 			return node['right']
 
-# Classification and Regression Tree Algorithm
+# Classification and Regression Tree Algorithm, returning predictions from tree that is built
 def decision_tree(train, test, max_depth, min_size):
 	tree = build_tree(train, max_depth, min_size)
 	predictions = list()
