@@ -12,7 +12,7 @@ def load_csv(filename):
 	dataset = list(lines)
 	return dataset
 
-# Convert string column to float, necessary for evaluation
+# Convert string column to float, necessary for evaluation for categorical data
 def str_column_to_float(dataset, column):
 	for row in dataset:
 		row[column] = float(row[column].strip())
