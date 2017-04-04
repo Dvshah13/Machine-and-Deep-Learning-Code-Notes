@@ -79,27 +79,27 @@ def evaluate_algorithm(data_set, algorithm, n_folds, *args):
 		scores.append(rmse)
 	return scores
 
-# Make a prediction with coefficients
+# predicts an output value for a row given a set of coefficients, first coefficient is always the intercept, also called the bias as it is standalone and not responsible for a specific input value.  We also use previously prepared coefficients to make predictions for this dataset
 def predict(row, coefficients):
 	yhat = coefficients[0]
 	for i in range(len(row)-1):
 		yhat += coefficients[i + 1] * row[i]
 	return yhat
 
-# Estimate linear regression coefficients using stochastic gradient descent
+# estimate linear regression coefficients using stochastic gradient descent, Stochastic gradient descent requires two parameters; Learning Rate - Used to limit the amount each coefficient is corrected each time it is updated and Epochs - The number of times to run through the training data while updating the coefficients. These, along with the training data will be the arguments to the function
 def coefficients_sgd(train, l_rate, n_epoch):
 	coef = [0.0 for i in range(len(train[0]))]
-	for epoch in range(n_epoch):
-		for row in train:
+	for epoch in range(n_epoch): # loop over each epoch
+		for row in train: # loop over each row in the training data for an epoch.
 			yhat = predict(row, coef)
-			error = yhat - row[-1]
+			error = yhat - row[-1] # coefficients are updated based on the error the model made. The error is calculated as the difference between the prediction made with the candidate coefficients and the expected output value.
 			coef[0] = coef[0] - l_rate * error
-			for i in range(len(row)-1):
-				coef[i + 1] = coef[i + 1] - l_rate * error * row[i]
+			for i in range(len(row)-1): # loop over each coefficient and update it for a row in an epoch
+				coef[i + 1] = coef[i + 1] - l_rate * error * row[i] # update each coefficient for each row in the training data, each epoch
 			# print(l_rate, n_epoch, error)
 	return coef
 
-# Linear Regression Algorithm With Stochastic Gradient Descent
+# linear Regression Algorithm With Stochastic Gradient Descent
 def linear_regression_sgd(train, test, l_rate, n_epoch):
 	predictions = list()
 	coef = coefficients_sgd(train, l_rate, n_epoch)
