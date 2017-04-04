@@ -1,5 +1,7 @@
 # Logistic Regression - used in classification to estimate discrete values (binary values like 0/1, yes/no, true/false) based on a given set of independent variables.  It predicts the probability of an event by fitting data to a logit function.  Also known as logit regression.  Since it predicts the probability, its output lies between 0 to 1.  The logistic function (logit) is also called the sigmoid function.  It’s an S-shaped curve that can take any real-valued number and map it into a value between 0 and 1 but never exactly at those limits.
 
+# Here we're applying stochastic gradient which is a technique that evaluates and updates the coefficients every iteration to minimize the error of a model on our training data.
+
 # Logistic Regression on Diabetes Data set
 from csv import reader
 from math import exp
@@ -32,7 +34,7 @@ def data_set_min_max(data_set):
 		min_max.append([min_value, max_value])
 	return min_max
 
-# Rescale data set columns to the range 0-1, necessary for classification
+# Rescale data set columns to the range 0-1, good practice because it will allow the algorithm to reach the minimum cost faster if the shape of the cost function is not skewed and distorted.
 def normalize_data_set(data_set, min_max):
 	for row in data_set:
 		for i in range(len(row)):
@@ -83,18 +85,18 @@ def predict(row, coefficients):
 	yhat = coefficients[0]
 	for i in range(len(row)-1):
 		yhat += coefficients[i + 1] * row[i]
-	return 1.0 / (1.0 + exp(-yhat))
+	return 1.0 / (1.0 + exp(-yhat)) # necessary for logistic regression, need data to be between 0 and 1 for classification, equivalent to y = 1.0 / (1.0 + e^(-(b0 + b1 * X1 + b2 * X2)))
 
-# Estimate logistic regression coefficients using stochastic gradient descent
+# estimate logistic regression coefficients using stochastic gradient descent, Stochastic gradient descent requires two parameters; Learning Rate - Used to limit the amount each coefficient is corrected each time it is updated and Epochs - The number of times to run through the training data while updating the coefficients. These, along with the training data will be the arguments to the function
 def coefficients_sgd(train, l_rate, n_epoch):
 	coef = [0.0 for i in range(len(train[0]))]
-	for epoch in range(n_epoch):
-		for row in train:
+	for epoch in range(n_epoch): # loop over each epoch
+		for row in train: # loop over each row in the training data for an epoch.
 			yhat = predict(row, coef)
-			error = row[-1] - yhat
+			error = row[-1] - yhat # coefficients are updated based on the error the model made. error is calculated as the difference between the expected output value and the prediction made with the coefficients
 			coef[0] = coef[0] + l_rate * error * yhat * (1.0 - yhat)
-			for i in range(len(row)-1):
-				coef[i + 1] = coef[i + 1] + l_rate * error * yhat * (1.0 - yhat) * row[i]
+			for i in range(len(row)-1): # loop over each coefficient and update it for a row in an epoch
+				coef[i + 1] = coef[i + 1] + l_rate * error * yhat * (1.0 - yhat) * row[i] # update each coefficient for each row in the training data, each epoch
 	return coef
 
 # Linear Regression Algorithm With Stochastic Gradient Descent
