@@ -121,8 +121,8 @@ min_max = data_set_min_max(data_set)
 normalize_data_set(data_set, min_max)
 # evaluate algorithm
 n_folds = 5
-l_rate = 0.1
-n_epoch = 100
+l_rate = 0.1 # keep it small, can use 0.001 as well
+n_epoch = 100 # number of epochs to train, using 50 epochs or exposures of the coefficients to the entire training data set.
 scores = evaluate_algorithm(data_set, logistic_regression, n_folds, l_rate, n_epoch)
 print('Scores: %s' % scores)
 print('Mean Accuracy: %.3f%%' % (sum(scores)/float(len(scores))))
