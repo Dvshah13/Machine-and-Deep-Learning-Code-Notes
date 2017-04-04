@@ -6,7 +6,7 @@ from math import sqrt
 from random import seed
 from random import randrange
 
-# Load a CSV file, data set used
+# Load a CSV file, data set used here is red_wine_quality.csv
 def load_csv(filename):
 	data_set = list()
 	with open(filename, 'r') as file:
@@ -111,7 +111,7 @@ def linear_regression_sgd(train, test, l_rate, n_epoch):
 # Linear Regression on wine quality data set
 seed(1)
 # load and prepare data
-filename = 'Data Sets for Code/red_wine_quality-lin_reg.csv'
+filename = 'Data Sets for Code/red_wine_quality.csv'
 data_set = load_csv(filename)
 for i in range(len(data_set[0])):
 	str_column_to_float(data_set, i)
