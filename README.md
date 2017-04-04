@@ -23,7 +23,7 @@
 5. placeholders_tensorflow.py - How to use placeholder variables and pass values on after output
 6. cnn_rnn_lstm_sequence_classification_keras.py - Convolutional Neural Net with LSTM Recurrent Neural Net for sequence classification using the IMDB movie review data set which is accessed using a built in Keras function
 7. rnn_lstm_text_generation_keras.py - LSTM Recurrent Neural Net text generation using keras and sherlock_asib.txt data set (provided by Project Gutenburg) 
-8. rnn_lstm_time_series_keras.py - LSTM Recurrent Neural Net time series prediction with keras, pandas, scikit learn, numpy and matplotlib using   data set
+8. rnn_lstm_time_series_keras.py - LSTM Recurrent Neural Net time series prediction with keras, pandas, scikit learn, numpy and matplotlib using DJIA.csv data set
 9. rnn_classification_tensorflow - Classification with Recurrent Neural Net using tensorflow and MNIST data set
 10. rnn_regression_tensorflow - Regression with Recurrent Neural Net using tensorflow and MNIST data set
 11. save_restore_tensorflow - Saving and restoring variables using tensorflow
@@ -39,4 +39,4 @@
 5. train_xgboost.csv - Developed by the Otto Group, describes the 93 obfuscated details of more than 61,000 products grouped into 10 product categories
 6. iris.data - Developed by R.A. Fisher, contains 3 classes of 50 instances each, where each class refers to a type of iris plant. One class is linearly separable from the other 2; the latter are NOT linearly separable from each other
 7. sherlock_asib.txt - Written by Sir Arthur Conan Doyle and prepared by Project Gutenburg, contains text for A Scandal in Bohemia
-8. DJIA - Dow Jones Industrial Average over a period of 10 years, only attributes considered are date and price
+8. DJIA.csv - Dow Jones Industrial Average over a period of 10 years, only attributes considered are date and price
