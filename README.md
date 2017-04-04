@@ -1,6 +1,6 @@
 # Machine and Deep Learning Code and Notes
 #### Code and Notes on Machine and Deep Learning Algorithms/Techniques using various python libraries. 
-#### Credit must be given to Python Machine Learning by Sebastian Raschka, Machine Learning Mastery by Jason Brownlee, Scikit Learn Documentation, Introduction to Machine Learning with Python by Andreas C Muller and Sarah Guido, Tensorflow Site and Documentation.  These resources were instrumental in my learning process.
+#### Credit must be given to Python Machine Learning by Sebastian Raschka, Machine Learning Mastery by Jason Brownlee, Scikit Learn Documentation, Introduction to Machine Learning with Python by Andreas C Muller and Sarah Guido, Building Machine Learning System by Willi Richert and Luis Pedro Coelho, Tensorflow Site and Documentation.  These resources were instrumental in my learning process.
 ### Please Note:  Most of the python scripts are labeled with algorithm(s) and libraries used.  Notes and my thought process are commented at the top and between code.  Data sets can be found in MNIST and Data Sets for Code folder (provided by UCI data repository, Kaggle and Project Gutenburg).  Table of contents will indicate which algorithm(s), description, libraries and data set is being used for algorithm.
 ### Table of Contents
 #### Machine Learning Scripts
