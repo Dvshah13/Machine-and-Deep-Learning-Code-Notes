@@ -13,9 +13,13 @@
 7. naive_bayes.py - Naive Bayes algorithm using the diabetes.csv data set (provided by UCI data repository)
 8. k-nearest_neighbors.py - K-Nearest Neighbors algorithm using the iris.data classic data set
 9. basic_k-means.py - K-Means clustering demonstrated using faithful.csv data set 
-10. basic_perceptron.py - Perception algorithm using the signals_sonar_classify.csv data set (provided by UCI data repository)
-11. classification_tensorflow.py - Classification with tensorflow using the MNIST data set filtered and obtained with the input_data.py file
-12. ex1_tensorflow.py - Basic file outlining structure (weights, biases, tensorflow structure) using tensorflow
+10. k-means.py - K-Means clustering demonstration using scikit learn module datat set
+11. k-means++.py - Demonstration of K-Means++ algorithm building upon k-means.py
+12. k-means++_elbow_silhouette.py - Building upon concepts of K-Means++, demonstrating methods to estimate optimal number of clusters (elbow) and evaluation of the quality of clustering (silhouette)
+13. hierarchical_clustering.py - Demonstration of alternative type of clustering, hierachical clustering with scipy
+14. basic_perceptron.py - Perception algorithm using the signals_sonar_classify.csv data set (provided by UCI data repository)
+15. classification_tensorflow.py - Classification with tensorflow using the MNIST data set filtered and obtained with the input_data.py file
+16. ex1_tensorflow.py - Basic file outlining structure (weights, biases, tensorflow structure) using tensorflow
 #### Deep Learning Scripts
 1. basic_imageclass.py - Image Classification using Convolutional Neural Network with tensorflow using the MNIST data set filtered and obtained with the input_data.py file
 2. basic_ann_tensforflow.py - First neural network using tensorflow, numpy and plotted with matplotlib
