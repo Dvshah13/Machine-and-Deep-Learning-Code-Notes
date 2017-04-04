@@ -16,7 +16,7 @@
 10. k-means.py - K-Means clustering demonstration using scikit learn module datat set
 11. k-means++.py - Demonstration of K-Means++ algorithm building upon k-means.py
 12. k-means++_elbow_silhouette.py - Building upon concepts of K-Means++, demonstrating methods to estimate optimal number of clusters (elbow) and evaluation of the quality of clustering (silhouette)
-13. hierarchical_clustering.py - Demonstration of alternative type of clustering, hierachical clustering with scipy
+13. hierarchical_clustering.py - Demonstration of alternative type of clustering, hierarchical clustering with scipy
 14. basic_perceptron.py - Perception algorithm using the signals_sonar_classify.csv data set (provided by UCI data repository)
 15. classification_tensorflow.py - Classification with tensorflow using the MNIST data set filtered and obtained with the input_data.py file
 16. ex1_tensorflow.py - Basic file outlining structure (weights, biases, tensorflow structure) using tensorflow
