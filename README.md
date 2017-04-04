@@ -6,8 +6,8 @@
 #### Machine Learning Scripts
 1. linear_regression_sgd.py - Linear Regression with Stoichastic Gradient Descent using the red_wine_quality.csv data set (provided by UCI data repository)
 2. logistic_regression_sgd.py - Logistic Regression with Stoichastic Gradient Descent using the diabetes.csv data set (provided by UCI data repository)
-3. decision_tees.py - Decision Tree using the signal_sonar_classify.csv data set (provided by UCI data repository)
-4. decision_trees_xg_boosting.py - Demonstration of XG Boosting and plotting with scikit learn, pandas, numpy and matplotlib using the train_xg_boost.csv (provided by Kaggle)
+3. decision_tees.py - Decision Tree using the signals_sonar_classify.csv data set (provided by UCI data repository)
+4. decision_trees_xg_boosting.py - Demonstration of XG Boosting and plotting with scikit learn, pandas, numpy and matplotlib using the train_xgboost.csv (provided by Kaggle)
 5. bagging_decision_trees.py - Demonstration of bagging and bootstrap aggregation using the signals_sonar_classify.csv data set (provided by UCI data repository)
 6. random_forests.py - Demonstration of the random forest algorithm using the signals_sonar_classify.csv data set (provided by UCI data repository)
 7. naive_bayes.py - Naive Bayes algorithm using the diabetes.csv data set (provided by UCI data repository)
@@ -32,3 +32,10 @@
 14. visualize_net_basic_tensorflow.py - basic version of visualizing network using tensorflow's built in tool called tensorboard
 15. visualizing_net_added_features_tensorflow.py - includes some added features, visualizing network using tensorflow's built in tool called tensorboard
 #### Data Sets
+1. MNIST - Developed by Yann LeCun, Corinna Cortes, Google Labs, Christopher J.C. Burges, contains a database of handwritten digits, a training set of 60,000 examples, and a test set of 10,000 examples. 
+2. red_wine_quality.csv - Developed by Paulo Cortezo, A. Cerdeira, F. Almeida, T. Matos and J. Reis, contains twelve attributes including wine quality score from 0-10
+3. diabetes.csv - Developed by National Institute of Diabetes and Digestive and Kidney Diseases, contains nine attributes including class variable 0-1 (0 negative and 1 positive for diabetes)
+4. signals_sonar_classify.csv - Developed by Terry Sejnowski, each pattern is a set of 60 numbers in the range 0.0 to 1.0. Each number represents the energy within a particular frequency band, integrated over a certain period of time
+5. train_xgboost.csv - Developed by the Otto Group, describes the 93 obfuscated details of more than 61,000 products grouped into 10 product categories
+6. iris.data - Developed by R.A. Fisher, contains 3 classes of 50 instances each, where each class refers to a type of iris plant. One class is linearly separable from the other 2; the latter are NOT linearly separable from each other
+7. sherlock_asib.txt - Written by Sir Arthur Conan Doyle and prepared by Project Gutenburg, contains text for A Scandal in Bohemia
