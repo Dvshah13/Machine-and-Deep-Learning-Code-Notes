@@ -31,3 +31,4 @@
 13. variables_tensorflow - dealing with and initializing variables using tensorflow
 14. visualize_net_basic_tensorflow.py - basic version of visualizing network using tensorflow's built in tool called tensorboard
 15. visualizing_net_added_features_tensorflow.py - includes some added features, visualizing network using tensorflow's built in tool called tensorboard
+#### Data Sets
