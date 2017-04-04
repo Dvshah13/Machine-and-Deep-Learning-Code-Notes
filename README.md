@@ -39,3 +39,4 @@
 5. train_xgboost.csv - Developed by the Otto Group, describes the 93 obfuscated details of more than 61,000 products grouped into 10 product categories
 6. iris.data - Developed by R.A. Fisher, contains 3 classes of 50 instances each, where each class refers to a type of iris plant. One class is linearly separable from the other 2; the latter are NOT linearly separable from each other
 7. sherlock_asib.txt - Written by Sir Arthur Conan Doyle and prepared by Project Gutenburg, contains text for A Scandal in Bohemia
+8. DJIA - Dow Jones Industrial Average over a period of 10 years, only attributes considered are date and price
