@@ -12,9 +12,10 @@
 6. random_forests.py - Demonstration of the random forest algorithm using the signals_sonar_classify.csv data set (provided by UCI data repository)
 7. naive_bayes.py - Naive Bayes algorithm using the diabetes.csv data set (provided by UCI data repository)
 8. k-nearest_neighbors.py - K-Nearest Neighbors algorithm using the iris.data classic data set
-9. basic_perceptron.py - Perception algorithm using the signals_sonar_classify.csv data set (provided by UCI data repository)
-10. classification_tensorflow.py - Classification with tensorflow using the MNIST data set filtered and obtained with the input_data.py file
-11. ex1_tensorflow.py - Basic file outlining structure (weights, biases, tensorflow structure) using tensorflow
+9. basic_k-means.py - K-Means clustering demonstrated using faithful.csv data set 
+10. basic_perceptron.py - Perception algorithm using the signals_sonar_classify.csv data set (provided by UCI data repository)
+11. classification_tensorflow.py - Classification with tensorflow using the MNIST data set filtered and obtained with the input_data.py file
+12. ex1_tensorflow.py - Basic file outlining structure (weights, biases, tensorflow structure) using tensorflow
 #### Deep Learning Scripts
 1. basic_imageclass.py - Image Classification using Convolutional Neural Network with tensorflow using the MNIST data set filtered and obtained with the input_data.py file
 2. basic_ann_tensforflow.py - First neural network using tensorflow, numpy and plotted with matplotlib
@@ -38,5 +39,6 @@
 4. signals_sonar_classify.csv - Developed by Terry Sejnowski, each pattern is a set of 60 numbers in the range 0.0 to 1.0. Each number represents the energy within a particular frequency band, integrated over a certain period of time
 5. train_xgboost.csv - Developed by the Otto Group, describes the 93 obfuscated details of more than 61,000 products grouped into 10 product categories
 6. iris.data - Developed by R.A. Fisher, contains 3 classes of 50 instances each, where each class refers to a type of iris plant. One class is linearly separable from the other 2; the latter are NOT linearly separable from each other
-7. sherlock_asib.txt - Written by Sir Arthur Conan Doyle and prepared by Project Gutenburg, contains text for A Scandal in Bohemia
-8. DJIA.csv - Dow Jones Industrial Average over a period of 10 years, only attributes considered are date and price
+7. faithful.csv - Developed by Azzalini and Bowman, containing Old Faithful Geyser Data in two attributes, eruptions - eruption time in minutes and waiting - waiting time to next eruption also in minutes
+8. sherlock_asib.txt - Written by Sir Arthur Conan Doyle and prepared by Project Gutenburg, contains text for A Scandal in Bohemia
+9. DJIA.csv - Dow Jones Industrial Average over a period of 10 years, only attributes considered are date and price
