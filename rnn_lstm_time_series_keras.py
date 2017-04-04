@@ -22,7 +22,7 @@ def create_dataset(dataset, look_back=1):
 # fix the random number seed to ensure our results are reproducible
 numpy.random.seed(7)
 # load the data set as a pandas data frame
-dataframe = read_csv('international-airline-passengers.csv', usecols=[1], engine='python', skipfooter=3)
+dataframe = read_csv('Data Sets for Code/DJIA.csv', usecols=[1], engine='python')
 dataset = dataframe.values
 dataset = dataset.astype('float32')
 # normalize the dataset, useful since LSTMs are sensitive to the scale of the input data, specifically when the sigmoid (default) or tanh activation functions are used. It is good practice to rescale the data to the range of 0-to-1 using MinMaxScaler built into scikit learn
