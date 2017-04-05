@@ -12,7 +12,7 @@
 6. random_forests.py - Demonstration of the random forest algorithm using the signals_sonar_classify.csv data set (provided by UCI data repository)
 7. naive_bayes.py - Naive Bayes algorithm using the diabetes.csv data set (provided by UCI data repository)
 8. k-nearest_neighbors.py - K-Nearest Neighbors algorithm using the iris.data classic data set
-9. basic_k-means.py - K-Means clustering demonstrated using faithful.csv data set 
+9. basic_k-means.py - K-Means clustering demonstrated using the faithful.csv data set 
 10. k-means.py - K-Means clustering demonstration using scikit learn module data set
 11. k-means++.py - Demonstration of K-Means++ algorithm building upon k-means.py
 12. k-means++_elbow_silhouette.py - Building upon concepts of K-Means++, demonstrating methods to estimate optimal number of clusters (elbow) and evaluation of the quality of clustering (silhouette)
