@@ -46,3 +46,5 @@
 7. faithful.csv - Developed by Azzalini and Bowman, containing Old Faithful Geyser Data in two attributes, eruptions - eruption time in minutes and waiting - waiting time to next eruption also in minutes
 8. sherlock_asib.txt - Written by Sir Arthur Conan Doyle and prepared by Project Gutenburg, contains text for A Scandal in Bohemia
 9. DJIA.csv - Dow Jones Industrial Average over a period of 10 years, only attributes considered are date and price
+#### Notes 
+Adding spark notes here
