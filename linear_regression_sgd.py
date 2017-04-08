@@ -51,7 +51,7 @@ def cross_validation_split(data_set, n_folds):
 		data_set_split.append(fold)
 	return data_set_split
 
-# Calculate root mean squared error, RSME is the square root of the variance of the residuals or the absolute measure of fit. It indicates the absolute fit of the model to the data–how close the observed data points are to the model’s predicted values.
+# Calculate root mean squared error, RSME is the square root of the variance of the residuals or the absolute measure of fit. It indicates the absolute fit of the model to the data–how close the observed data points are to the model’s predicted values. Lower values of RMSE indicate better fit
 def rmse_metric(actual, predicted):
 	sum_error = 0.0
 	for i in range(len(actual)):
