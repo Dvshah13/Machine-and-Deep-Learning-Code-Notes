@@ -22,7 +22,7 @@ def str_column_to_float(data_set, column):
 	for row in data_set:
 		row[column] = float(row[column].strip())
 
-# Iterate through data set and append min_max with the min and max to be used later
+# Iterate through data set and append min_max with the min and max to be used later for nomalization
 def data_set_min_max(data_set):
 	min_max = list()
 	for i in range(len(data_set[0])):
