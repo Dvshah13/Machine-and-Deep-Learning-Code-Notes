@@ -12,11 +12,11 @@
 6. random_forests.py - Demonstration of the random forest algorithm using the signals_sonar_classify.csv data set (provided by UCI data repository)
 7. naive_bayes.py - Naive Bayes algorithm using the diabetes.csv data set (provided by UCI data repository)
 8. k-nearest_neighbors.py - K-Nearest Neighbors algorithm using the iris.data classic data set
-9. basic_k-means.py - K-Means clustering demonstrated using faithful.csv data set 
-10. k-means.py - K-Means clustering demonstration using scikit learn module datat set
+9. basic_k-means.py - K-Means clustering demonstrated using the faithful.csv data set 
+10. k-means.py - K-Means clustering demonstration using scikit learn module data set
 11. k-means++.py - Demonstration of K-Means++ algorithm building upon k-means.py
 12. k-means++_elbow_silhouette.py - Building upon concepts of K-Means++, demonstrating methods to estimate optimal number of clusters (elbow) and evaluation of the quality of clustering (silhouette)
-13. hierarchical_clustering.py - Demonstration of alternative type of clustering, hierachical clustering with scipy
+13. hierarchical_clustering.py - Demonstration of alternative type of clustering, hierarchical clustering with scipy
 14. basic_perceptron.py - Perception algorithm using the signals_sonar_classify.csv data set (provided by UCI data repository)
 15. classification_tensorflow.py - Classification with tensorflow using the MNIST data set filtered and obtained with the input_data.py file
 16. ex1_tensorflow.py - Basic file outlining structure (weights, biases, tensorflow structure) using tensorflow
@@ -46,3 +46,6 @@
 7. faithful.csv - Developed by Azzalini and Bowman, containing Old Faithful Geyser Data in two attributes, eruptions - eruption time in minutes and waiting - waiting time to next eruption also in minutes
 8. sherlock_asib.txt - Written by Sir Arthur Conan Doyle and prepared by Project Gutenburg, contains text for A Scandal in Bohemia
 9. DJIA.csv - Dow Jones Industrial Average over a period of 10 years, only attributes considered are date and price
+#### Notes 
+1. Adding spark notes here
+2. Adding hadoop notes here
