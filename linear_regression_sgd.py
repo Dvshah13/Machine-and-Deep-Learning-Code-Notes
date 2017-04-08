@@ -32,7 +32,7 @@ def data_set_min_max(data_set):
 		min_max.append([min_value, max_value])
 	return min_max
 
-# Normalizing the data set, this is not necessary but good practice because it will allow the algorithm to reach the minimum cost faster if the shape of the cost function is not skewed and distorted.  Here we return values from 0,1
+# Normalizing/rescaling the data set, this is not necessary but good practice because it will allow the algorithm to reach the minimum cost faster if the shape of the cost function is not skewed and distorted.  Here we return values from 0,1
 def normalize_data_set(data_set, min_max):
 	for row in data_set:
 		for i in range(len(row)):
