@@ -47,4 +47,5 @@
 8. sherlock_asib.txt - Written by Sir Arthur Conan Doyle and prepared by Project Gutenburg, contains text for A Scandal in Bohemia
 9. DJIA.csv - Dow Jones Industrial Average over a period of 10 years, only attributes considered are date and price
 #### Notes 
-Adding spark notes here
+1. Adding spark notes here
+2. Adding hadoop notes here
