@@ -40,7 +40,7 @@ def normalize_data_set(data_set, min_max):
 		for i in range(len(row)):
 			row[i] = (row[i] - min_max[i][0]) / (min_max[i][1] - min_max[i][0])
 
-# # The aim in cross-validation is to ensure that every example from the original dataset has the same chance of appearing in the training and testing set. In k-fold cross-validation, the original sample is randomly partitioned into k equal sized subsamples. Of the k subsamples, a single subsample is retained as the validation data for testing the model, and the remaining k − 1 subsamples are used as training data. The cross-validation process is then repeated k times (the folds), with each of the k subsamples used exactly once as the validation data. The k results from the folds can then be averaged to produce a single estimation. The advantage of this method over repeated random sub-sampling is that all observations are used for both training and validation, and each observation is used for validation exactly once.  Using a n_folds of 5 in this function.
+ # The aim in cross-validation is to ensure that every example from the original dataset has the same chance of appearing in the training and testing set. In k-fold cross-validation, the original sample is randomly partitioned into k equal sized subsamples. Of the k subsamples, a single subsample is retained as the validation data for testing the model, and the remaining k − 1 subsamples are used as training data. The cross-validation process is then repeated k times (the folds), with each of the k subsamples used exactly once as the validation data. The k results from the folds can then be averaged to produce a single estimation. The advantage of this method over repeated random sub-sampling is that all observations are used for both training and validation, and each observation is used for validation exactly once.  Using a n_folds of 5 in this function.
 def cross_validation_split(data_set, n_folds):
 	data_set_split = list()
 	data_set_copy = list(data_set)
@@ -87,7 +87,7 @@ def predict(row, coefficients):
 		yhat += coefficients[i + 1] * row[i]
 	return 1.0 / (1.0 + exp(-yhat)) # necessary for logistic regression, need data to be between 0 and 1 for classification, equivalent to y = 1.0 / (1.0 + e^(-(b0 + b1 * X1 + b2 * X2)))
 
-# estimate logistic regression coefficients using stochastic gradient descent, Stochastic gradient descent requires two parameters; Learning Rate - Used to limit the amount each coefficient is corrected each time it is updated and Epochs - The number of times to run through the training data while updating the coefficients. These, along with the training data will be the arguments to the function
+# Estimate logistic regression coefficients using stochastic gradient descent, Stochastic gradient descent requires two parameters; Learning Rate - Used to limit the amount each coefficient is corrected each time it is updated and Epochs - The number of times to run through the training data while updating the coefficients. These, along with the training data will be the arguments to the function
 def coefficients_sgd(train, l_rate, n_epoch):
 	coef = [0.0 for i in range(len(train[0]))]
 	for epoch in range(n_epoch): # loop over each epoch
