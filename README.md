@@ -48,6 +48,6 @@
 9. DJIA.csv - Dow Jones Industrial Average over a period of 10 years, only attributes considered are date and price
 #### Notes 
 1. Deep Learning Notes.pdf - More simplified
-2. Deep Learning Notes - More detailed
+2. DeepLearning_Notes_Detailed.pdf - More detailed
 3. Adding spark notes here
 4. Adding hadoop notes here
