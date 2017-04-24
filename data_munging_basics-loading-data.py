@@ -31,7 +31,7 @@ import pandas as pd
 # print bad_data_df
 
 ## Filling in missing values with mean
-# impute_vals_df = bad_data_df.fillna(bad_data_df.mean(axis=0))
+# impute_vals_df = bad_data_df.fillna(bad_data_df.mean(axis=0)) # can use median as well, axis=0 extends column wise, axis=1 extends row wise
 # print impute_vals_df
 
 ## If we have bad lines
@@ -59,7 +59,7 @@ import pandas as pd
 #             break
 
 ## Using csv packages, reader, to iterate small chunks of data from files
-import csv
+# import csv
 # with open('Data Sets for Code/istanbul_market_data.csv', 'rb') as data_stream:
 #     for n, row in enumerate(csv.reader(data_stream, dialect="excel")):
 #         if n == 0:
@@ -90,3 +90,5 @@ import csv
 # for batch_input in batch_read(filename, batch=5):
 #     print batch_input
 #     break
+
+## Accessing other data formats
