@@ -91,4 +91,6 @@ import pandas as pd
 #     print batch_input
 #     break
 
-## Accessing other data formats
+## Accessing other data formats, pandas library offers similar functionality and functions to load excel, hdfs, sql, json, html and stata datasets
+# excel_df = pd.read_excel('Data Sets for Code/istanbul_market_excel.xlsx')
+# print excel_df
