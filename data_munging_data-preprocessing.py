@@ -27,3 +27,19 @@ df = pd.read_csv('Data Sets for Code/istanbul_market_data.csv', sep=',', decimal
 # if your dataset contains a time series and you need to apply a rolling operation to it (in the case of noisy data points), you can do the following
 # smooth_time_series = pd.rolling_mean(time_series, 5) # can do the same for median
 # print smooth_time_series
+
+## Dealing with an index column in a csv file
+# df = pd.read_csv('filename.csv', index_col=0)
+
+## extract value of column and row
+# print df['Date'][90] # returns value from date at row 90, specify column then row
+# can also use .loc() method
+# print df.loc[90, 'Date'] # returns value from date at row 90, specify row then column
+# can also use .ix() method
+# print df.ix[90, 'Date']
+# using .ix() method with column number
+# print df.ix[90, 0]
+# using a full-optimized function that specifies positions, iloc()
+# print df.iloc[2,2] # specify the cell using row and column number
+# specifying the lists of indexes instead of scalars
+# print df[['Date', 'FTSE']][0:2]
