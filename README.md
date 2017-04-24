@@ -4,7 +4,8 @@
 ### Please Note:  Most of the python scripts are labeled with algorithm(s) and libraries used.  Notes and my thought process are commented at the top and between code.  Data sets can be found in MNIST and Data Sets for Code folder (provided by UCI data repository, Kaggle and Project Gutenburg).  Table of contents will indicate which algorithm(s), description, libraries and data set is being used for algorithm.
 ### Table of Contents
 #### Data Munging Techniques and Practices
-1. data_munging_basics-loading-data.py - Showing how to load, extract information and checking shape of datasets using various methods (pandas, numpy) and dealing with issues that may arise such as missing data, bad lines, parsing through dates, dealing with larger data sets. 
+1. data_munging_basics-loading-data.py - Showing how to load, extract information and checking shape of datasets using various methods (pandas, numpy) and dealing with issues that may arise such as missing data, bad lines, parsing through dates, dealing with larger data sets
+2. data_munging_data-preprocessing - Going through preprocessing steps, including mask function, mask target to change label and getting information grouped in different ways
 #### Machine Learning Scripts
 1. linear_regression_sgd.py - Linear Regression with Stoichastic Gradient Descent using the red_wine_quality.csv data set (provided by UCI data repository)
 2. logistic_regression_sgd.py - Logistic Regression with Stoichastic Gradient Descent using the diabetes.csv data set (provided by UCI data repository)
