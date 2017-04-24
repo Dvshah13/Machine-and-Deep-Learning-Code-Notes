@@ -3,6 +3,8 @@
 #### Credit must be given to Python Machine Learning by Sebastian Raschka, Machine Learning Mastery by Jason Brownlee, Scikit Learn Documentation, Introduction to Machine Learning with Python by Andreas C Muller and Sarah Guido, Building Machine Learning System by Willi Richert and Luis Pedro Coelho, Tensorflow Site and Documentation.  These resources were instrumental in my learning process.
 ### Please Note:  Most of the python scripts are labeled with algorithm(s) and libraries used.  Notes and my thought process are commented at the top and between code.  Data sets can be found in MNIST and Data Sets for Code folder (provided by UCI data repository, Kaggle and Project Gutenburg).  Table of contents will indicate which algorithm(s), description, libraries and data set is being used for algorithm.
 ### Table of Contents
+#### Data Munging Techniques and Practices
+1. data_munging_basics-loading-data.py - Showing how to load, extract information and checking shape of datasets using various methods (pandas, numpy) and dealing with issues that may arise such as missing data, bad lines, parsing through dates, dealing with larger data sets. 
 #### Machine Learning Scripts
 1. linear_regression_sgd.py - Linear Regression with Stoichastic Gradient Descent using the red_wine_quality.csv data set (provided by UCI data repository)
 2. logistic_regression_sgd.py - Logistic Regression with Stoichastic Gradient Descent using the diabetes.csv data set (provided by UCI data repository)
@@ -36,7 +38,13 @@
 13. variables_tensorflow - dealing with and initializing variables using tensorflow
 14. visualize_net_basic_tensorflow.py - basic version of visualizing network using tensorflow's built in tool called tensorboard
 15. visualizing_net_added_features_tensorflow.py - includes some added features, visualizing network using tensorflow's built in tool called tensorboard
-#### Data Sets
+#### Data Munging Data Sets
+1. istanbul_market_data.csv - Data collected from imkb.gov.tr and finance.yahoo.com and available on UCI data set repository, contains data from Istanbul's stock exchange and other global exchanges 
+2. istanbul_data_bad.csv - Using a smaller version of istanbul_market_data deleted data from data set and used to show how to deal with this situation
+3. istanbul_data_bad_lines.csv - Using a smaller version of istanbul_market_data deleted data from data set and used to show how to deal with this situation
+4. istanbul_market_excel.xlsx - istanbul_market_data in excel format to show how to read varying file formats
+
+#### Data Sets for Model
 1. MNIST - Developed by Yann LeCun, Corinna Cortes, Google Labs, Christopher J.C. Burges, contains a database of handwritten digits, a training set of 60,000 examples, and a test set of 10,000 examples. 
 2. red_wine_quality.csv - Developed by Paulo Cortezo, A. Cerdeira, F. Almeida, T. Matos and J. Reis, contains twelve attributes including wine quality score from 0-10
 3. diabetes.csv - Developed by National Institute of Diabetes and Digestive and Kidney Diseases, contains nine attributes including class variable 0-1 (0 negative and 1 positive for diabetes)
