@@ -57,5 +57,6 @@
 #### Notes 
 1. Deep Learning Notes.pdf - More simplified
 2. DeepLearning_Notes_Detailed.pdf - More detailed
-3. Adding spark notes here
-4. Adding hadoop notes here
+3. Data Munging Notes - Detailed set of notes on data munging techniques and practices 
+4. Adding spark notes here
+5. Adding hadoop notes here
