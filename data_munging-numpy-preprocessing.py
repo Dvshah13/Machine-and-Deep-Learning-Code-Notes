@@ -45,8 +45,67 @@ import numpy as np
 # print Array_2d[1,1] # you can call out single values with indices (one for row (axis 0) and one for column dimension (axis 1))
 
 ## three dimensional array
-a_list_of_lists_of_lists = [[[1,2],[3,4],[5,6]],[[7,8],[9,10],[11,12]]]
-Array_3D = np.array(a_list_of_lists_of_lists)
-print Array_3D
+# a_list_of_lists_of_lists = [[[1,2],[3,4],[5,6]],[[7,8],[9,10],[11,12]]]
+# Array_3D = np.array(a_list_of_lists_of_lists)
+# print Array_3D
 # to access single elements of a three-dimensional array, you just have to point our a tuple of three indices
-print Array_3D[0,2,0] # access 5th element
+# print Array_3D[0,2,0] # access 5th element
+
+## Resizing Arrays, you can modify the shape of an existing array by using the .reshape method which accepts as parameter an n-tuple containing the size of the new dimension
+# restructuring a NumPy array shape
+# original_array = np.array([1,2,3,4,5,6,7,8])
+# Array_a = original_array.reshape(4,2) # reshape to size 4 X 2
+# Array_b = original_array.reshape(4,2).copy() # same size as Array_a but append .copy() method that copies the array into a new one
+# Array_c = original_array.reshape(2,2,2) # reshape in three dimensions of size 2 X 2 X 2
+# original_array[0] = -1 # after such assignment, the first element of original_array is changed in value to -1
+# print Array_a
+# print Array_b # Array_b doesn't show the -1 first element change because they don't dynamically mirror the original array
+# print Array_c
+# if it is necessary to change the shape of the original array, then the resize method is favored
+# original_array.resize(4,2)
+# print original_array
+# can get the same result bu acting on the .shape value by assigning a tuple of values representing the size of the intended dimensions
+# original_array.shape = (4,2)
+# print original_array
+
+## Arrays derived from NumPy functions, if you need a vector or matrix characterized by particular numeric series (zeros, ones, ordinal numbers and particular statistical distributions), NumPy functions provide you with quite a large range of choices
+# NumPy array of ordinal values (integers), use arange function, which returns integer values in a given interval (usually from zero) and reshapes its results
+# ordinal_values = np.arange(9).reshape(3,3)
+# print ordinal_values
+# to reverse the order of values, just use slice
+# ordinal_values_reverse = np.arange(9).reshape(3,3)[::-1]
+# print ordinal_values_reverse
+# if integers are just random
+# random_ints = np.random.randint(low=1, high=10, size=(3,3)).reshape(3,3)
+# print random_ints
+# some other useful arrays
+# zeros_array = np.zeros((3,3))
+# ones_array = np.ones((3,3))
+# identity_matrix = np.eye(3)
+# if the array will be used for a grid search to search for optimal parameters, fractional values in an interval or a logarithmic growth should prove most useful
+# fractions = np.linspace(start=0, stop=1, num=10)
+# print fractions
+# growth = np.logspace(start=0, stop=1, num=10, base=10.0)
+# print growth
+# Instead, statistical distributions such as normal or unifrom may be useful for the initialization of a vector or matrix of coefficients
+# std_gaussian = np.random.normal(size=(3,3))
+# print std_gaussian
+# if you need to specify a different mean and standard deviation, do the following:
+# gaussian = np.random.normal(loc=1.0, scale=3.0, size=(3,3))  # the loc parameter stand for the mean and the scale is actually the standard deviation
+# print gaussian
+# another frequent choice for statistical distribution, the uniform distribution (used to initialize a vector)
+# uniform_dist = np.random.uniform(low=0.0, high=1.0, size=(3,3))
+# print uniform_dist
+
+## Getting an array directly from a file
+# istanbul_market = np.loadtxt('Data Sets for Code/istanbul_data_nodates_labels.csv', delimiter=',', dtype=float)
+# print istanbul_market
+# NumPy loadtxt given a filename, delimiter and a dtype will upload the data to an array unless the dtype is wrong.  For instance, if there's a string variable and the required array type is float, you will get a ValueError (if you used the original istanbul dataset)
+
+## Extracting data from Pandas, arrays can be easily extracted from DataFrame objects and they can be transformed into a DataFrame themselves.
+
+import pandas as pd
+istanbul_market = pd.read_csv('Data Sets for Code/istanbul_market_data.csv', header=None)
+istanbul_market_array = istanbul_market.values
+print istanbul_market_array.dtype
+print istanbul_market.dtypes # using the .dtypes method on the DataFrame allows you to anticipate the dtype of the resulting array and consquently decide whether to transform or change the type of the variables in the DataFrame object before preceeding
