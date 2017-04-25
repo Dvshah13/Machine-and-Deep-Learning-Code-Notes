@@ -104,8 +104,32 @@ import numpy as np
 
 ## Extracting data from Pandas, arrays can be easily extracted from DataFrame objects and they can be transformed into a DataFrame themselves.
 
-import pandas as pd
-istanbul_market = pd.read_csv('Data Sets for Code/istanbul_market_data.csv', header=None)
-istanbul_market_array = istanbul_market.values
-print istanbul_market_array.dtype
-print istanbul_market.dtypes # using the .dtypes method on the DataFrame allows you to anticipate the dtype of the resulting array and consquently decide whether to transform or change the type of the variables in the DataFrame object before preceeding
+# import pandas as pd
+# istanbul_market = pd.read_csv('Data Sets for Code/istanbul_market_data.csv', header=None)
+# istanbul_market_array = istanbul_market.values
+# print istanbul_market_array.dtype
+# print istanbul_market.dtypes # using the .dtypes method on the DataFrame allows you to anticipate the dtype of the resulting array and consquently decide whether to transform or change the type of the variables in the DataFrame object before preceeding
+
+## NumPy fast operation and computations, when arrays need to be manipulated by mathematical operations, you just need to apply the operation on the array with respect to a numerical constant (a scalar) or an array of the exact same shape:
+# a = np.arange(5).reshape(1,5)
+# a += 1
+# print a*a # result here is the operation performed element-wise, that is, every element of the array is operated by either the scaler value or the corresponding element of the other array
+# When operating on arrays of different dimensions, it is still possible to obtain element-wise operations without having to restructure the data in case one of the corresponding dimensions is 1.  In fact, in such a case, the dimension of size 1 is stretched until it matches the dimension of the corresponding array.  This conversion is called broadcasting
+# a = np.arange(5).reshape(1,5) + 1
+# b = np.arange(5).reshape(5,1) + 1
+# print a * b
+# the preceding code is equivalent to:
+# a2 = np.array([1,2,3,4,5] * 5).reshape(5,5)
+# b2 = a2.T
+# print a2 * b2
+# however, it won't require an expansion of memory of the original arrays in order to obtain pair-wise multiplication.
+# there exists a wide range of NumPy functions that can operate element-wise on arrays: abs(), sign(), round(), floor(), sqrt(), log() and exp()
+# other usual operations that can be operated by NumPy functions are sum() and prod(), which provide the summation and product of the array rows or columns on the basis of the specified axis
+# print a2
+# print np.sum(a2, axis=0)
+# print np.sum(a2, axis=1)
+# NumPy operations are much faster than python lists operations
+# print %timeit -n 1 -r 3 [i+1.0 for i in range(10**6)]
+# print %timeit -n 1 -r 3 np.arange(10**6) + 1.0
+
+## Matrix
