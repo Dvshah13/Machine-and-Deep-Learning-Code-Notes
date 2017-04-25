@@ -47,6 +47,7 @@
 2. istanbul_data_bad.csv - Using a smaller version of istanbul_market_data deleted data from data set and used to show how to deal with this situation
 3. istanbul_data_bad_lines.csv - Using a smaller version of istanbul_market_data deleted data from data set and used to show how to deal with this situation
 4. istanbul_market_excel.xlsx - istanbul_market_data in excel format to show how to read varying file formats
+5. istanbul_market_nodates_nolabels.csv - istanbul_market_data without dates and labels used in extracting data from Pandas and converting into NumPy array
 
 #### Data Sets for Model
 1. MNIST - Developed by Yann LeCun, Corinna Cortes, Google Labs, Christopher J.C. Burges, contains a database of handwritten digits, a training set of 60,000 examples, and a test set of 10,000 examples. 
