@@ -8,6 +8,7 @@
 2. data_munging_data-preprocessing.py - Going through preprocessing steps, including mask function, mask target to change label and getting information grouped in different ways
 3. data_munging_basics-categorical.py - More preprocessing steps this time with categorical data using Pandas and Scikit Learn to map categorical data into binary features
 4. data_munging_basics-text.py - Preprocessing steps with text data, getting word counts, lists, frequencies, n-grams and hashing.  Using Scikit learn's CountVectorizer, Tfidf, HashingVectorizer
+5. data_munging-numpy-preprocessing - Preprocessing from other data structures to numpy ndarray's so they can them be used in ML functions with various python libraries
 #### Machine Learning Scripts
 1. linear_regression_sgd.py - Linear Regression with Stoichastic Gradient Descent using the red_wine_quality.csv data set (provided by UCI data repository)
 2. logistic_regression_sgd.py - Logistic Regression with Stoichastic Gradient Descent using the diabetes.csv data set (provided by UCI data repository)
