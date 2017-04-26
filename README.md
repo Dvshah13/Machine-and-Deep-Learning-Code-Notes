@@ -9,7 +9,7 @@
 3. data_munging_basics-categorical.py - More preprocessing steps this time with categorical data using Pandas and Scikit Learn to map categorical data into binary features
 4. data_munging_basics-text.py - Preprocessing steps with text data, getting word counts, lists, frequencies, n-grams and hashing.  Using Scikit learn's CountVectorizer, Tfidf, HashingVectorizer
 5. data_munging-numpy-preprocessing.py - Preprocessing NumPy ndarray's so they can them be used in ML functions with various python libraries.  Processes touched on include creating NumPy arrays, controlling memory size, working with heterogeneous lists, converting lists to multidimensional arrays, resizing arrays, arrays derived from NumPy functions, getting an array directly from a file, extracting data with Pandas, NumPy operation and computations, matrix operations, slicing and indexing NumPy arrays and stacking NumPy arrays
-6. data_exploratory-data-analysis.py - Starting the data science process, showing how to understand the dataset better, check its features and shape and getting a preliminary idea about the next steps to take
+6. data_exploratory-data-analysis.py - Starting the data science process, showing how to understand the dataset better, check its features and shape, through the data and visually by using different plotting methods and getting a preliminary idea about the next steps to take
 #### Machine Learning Scripts
 1. linear_regression_sgd.py - Linear Regression with Stoichastic Gradient Descent using the red_wine_quality.csv data set (provided by UCI data repository)
 2. logistic_regression_sgd.py - Logistic Regression with Stoichastic Gradient Descent using the diabetes.csv data set (provided by UCI data repository)
