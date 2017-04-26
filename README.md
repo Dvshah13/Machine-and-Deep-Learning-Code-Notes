@@ -3,12 +3,13 @@
 #### Credit must be given to Python Machine Learning by Sebastian Raschka, Machine Learning Mastery by Jason Brownlee, Scikit Learn Documentation, Introduction to Machine Learning with Python by Andreas C Muller and Sarah Guido, Python Data Science Essentials by Alberto Boschetti and Luca Massaron, Building Machine Learning System by Willi Richert and Luis Pedro Coelho, Tensorflow Site and Documentation.  These resources were instrumental in my learning process.
 ### Please Note:  Most of the python scripts are labeled with algorithm(s) and libraries used.  Notes and my thought process are commented at the top and between code.  Data sets can be found in MNIST and Data Sets for Code folder (provided by UCI data repository, Kaggle and Project Gutenburg).  Table of contents will indicate which algorithm(s), description, libraries and data set is being used for algorithm.
 ### Table of Contents
-#### Data Munging Techniques and Practices
+#### Data Munging Techniques and Data Analysis
 1. data_munging_basics-loading-data.py - Showing how to load, extract information and checking shape of datasets using various methods (Pandas, NumPy) and dealing with issues that may arise such as missing data, bad lines, parsing through dates, dealing with larger data sets
 2. data_munging_data-preprocessing.py - Going through preprocessing steps, including mask function, mask target to change label and getting information grouped in different ways
 3. data_munging_basics-categorical.py - More preprocessing steps this time with categorical data using Pandas and Scikit Learn to map categorical data into binary features
 4. data_munging_basics-text.py - Preprocessing steps with text data, getting word counts, lists, frequencies, n-grams and hashing.  Using Scikit learn's CountVectorizer, Tfidf, HashingVectorizer
 5. data_munging-numpy-preprocessing - Preprocessing NumPy ndarray's so they can them be used in ML functions with various python libraries.  Processes touched on include creating NumPy arrays, controlling memory size, working with heterogeneous lists, converting lists to multidimensional arrays, resizing arrays, arrays derived from NumPy functions, getting an array directly from a file, extracting data with Pandas, NumPy operation and computations, matrix operations, slicing and indexing NumPy arrays and stacking NumPy arrays
+6. data_exploratory-data-analysis - Starting the data science process, showing how to understand the dataset better, check its features and shape and getting a preliminary idea about the next steps to take
 #### Machine Learning Scripts
 1. linear_regression_sgd.py - Linear Regression with Stoichastic Gradient Descent using the red_wine_quality.csv data set (provided by UCI data repository)
 2. logistic_regression_sgd.py - Logistic Regression with Stoichastic Gradient Descent using the diabetes.csv data set (provided by UCI data repository)
