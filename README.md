@@ -3,7 +3,7 @@
 #### Credit must be given to Python Machine Learning by Sebastian Raschka, Machine Learning Mastery by Jason Brownlee, Scikit Learn Documentation, Introduction to Machine Learning with Python by Andreas C Muller and Sarah Guido, Python Data Science Essentials by Alberto Boschetti and Luca Massaron, Building Machine Learning System by Willi Richert and Luis Pedro Coelho, Tensorflow Site and Documentation.  These resources were instrumental in my learning process.
 ### Please Note:  Most of the python scripts are labeled with algorithm(s) and libraries used.  Notes and my thought process are commented at the top and between code.  Data sets can be found in MNIST and Data Sets for Code folder (provided by UCI data repository, Kaggle and Project Gutenburg).  Table of contents will indicate which algorithm(s), description, libraries and data set is being used for algorithm.
 ### Table of Contents
-#### Data Munging Techniques and Data Analysis
+#### Data Munging Techniques, Data Analysis and Overall Evaluation
 1. data_munging_basics-loading-data.py - Showing how to load, extract information and checking shape of datasets using various methods (Pandas, NumPy) and dealing with issues that may arise such as missing data, bad lines, parsing through dates, dealing with larger data sets
 2. data_munging_data-preprocessing.py - Going through preprocessing steps, including mask function, mask target to change label and getting information grouped in different ways
 3. data_munging_basics-categorical.py - More preprocessing steps this time with categorical data using Pandas and Scikit Learn to map categorical data into binary features
