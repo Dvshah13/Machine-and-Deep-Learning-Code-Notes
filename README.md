@@ -13,7 +13,9 @@
 7. data_feature-creation.py - Utilizing a built in housing dataset that is a regression problem, shows by using a simple regressor and calculating mean absolute error (MAE) how different feature creation techniques and transforms can minimize the MAE error and yield result that are satisfactory
 8. data_dimensionality-reduction.py - Examples using a variety of dimensionality reduction techniques found within Scikit-Learn, including the coraviance matrix, principle component analysis (PCA), randomized PCA, latent factor analysis, linear discriminant analysis, latent semantical analysis, independent component analysis, kernal PCA and restricted boltzmann machine
 9. data_outliers.py - Dealing with the detection and treatment of outliers, methods include univariate outlier detection, EllipticEnvelope and OneClassSVM
-10. evaluation_scoring-functions.py - Examples of various scoring functions you can use to evaluate performance of the system used.  Includes metrics and measures used for multilabel classification, binary classification and regression such as confusion matrix, accuracy, precision, recall, F1 score, ROC/AUC, mean absolute error (MAE), mean squared error (MSE) and R2 score.
+10. evaluation_scoring-functions.py - Examples of various scoring functions you can use to evaluate performance of the system used.  Includes metrics and measures used for multilabel classification, binary classification and regression such as confusion matrix, accuracy, precision, recall, F1 score, ROC/AUC, mean absolute error (MAE), mean squared error (MSE) and R2 score
+11. evaluation_testing-validation.py - Validation and testing best practices, including basic primer on cross validation
+12. evaluation_cross-validation.py - Cross-validation in detail
 #### Machine Learning Scripts
 1. linear_regression_sgd.py - Linear Regression with Stoichastic Gradient Descent using the red_wine_quality.csv data set (provided by UCI data repository)
 2. logistic_regression_sgd.py - Logistic Regression with Stoichastic Gradient Descent using the diabetes.csv data set (provided by UCI data repository)
