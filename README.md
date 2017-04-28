@@ -15,7 +15,7 @@
 9. data_outliers.py - Dealing with the detection and treatment of outliers, methods include univariate outlier detection, EllipticEnvelope and OneClassSVM
 10. evaluation_scoring-functions.py - Examples of various scoring functions you can use to evaluate performance of the system used.  Includes metrics and measures used for multilabel classification, binary classification and regression such as confusion matrix, accuracy, precision, recall, F1 score, ROC/AUC, mean absolute error (MAE), mean squared error (MSE) and R2 score
 11. evaluation_testing-validation.py - Validation and testing best practices, including basic primer on cross validation
-12. evaluation_cross-validation.py - Cross-validation in detail
+12. evaluation_cross-validation.py - Cross-validation in detail, including using various iterators to build your own cross-validation processes
 #### Machine Learning Scripts
 1. linear_regression_sgd.py - Linear Regression with Stoichastic Gradient Descent using the red_wine_quality.csv data set (provided by UCI data repository)
 2. logistic_regression_sgd.py - Logistic Regression with Stoichastic Gradient Descent using the diabetes.csv data set (provided by UCI data repository)
