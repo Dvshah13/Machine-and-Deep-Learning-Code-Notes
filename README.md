@@ -19,6 +19,7 @@
 13. evaluation_sampling-bootstrapping.py - Utilizing both sampling and bootstrap techniques as variations on cross-validation to improve model validation 
 14. evaluation_hyper-parameters-optimization.py - Extending cross-validation to find the best hyper-parameters to generalize our test dataset
 15. evaluation_custom-scoring-function-grid-search-runtime.py - Building custom scoring functions when the predefined functions may not perform well in your domain and how to reduce grid search runtime in instances where the data or grid search space is large by using RandomizedGridSearchCV
+16. data_evaluation_feature-selection.py - Demonstrating various techniques of feature selection including, univariate selection, recursive elimination, stability and L1-based selection
 #### Machine Learning Scripts
 1. linear_regression_sgd.py - Linear Regression with Stoichastic Gradient Descent using the red_wine_quality.csv data set (provided by UCI data repository)
 2. logistic_regression_sgd.py - Logistic Regression with Stoichastic Gradient Descent using the diabetes.csv data set (provided by UCI data repository)
