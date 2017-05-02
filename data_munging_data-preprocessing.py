@@ -4,7 +4,7 @@ import pandas as pd
 df = pd.read_csv('Data Sets for Code/istanbul_market_data.csv', sep=',', decimal='.')
 
 ## creating a mask function to a Boolean value to a condition I make (here true or false for TL Based ISE greater then 0.02)
-# mask_feature = df['TL Based ISE'] > 0.02
+mask_feature = df['TL Based ISE'] > 0.02
 print mask_feature
 
 ## use a selection mask to substitute label with New Label for practice, change date to New Label
