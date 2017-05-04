@@ -23,6 +23,7 @@
 #### Data Science Libraries Basic Functionality
 1. data_pandas_series_primer.py - Different use cases with Pandas Series that typically come up in the Data Science Pipeline
 2. data_pandas_dataframe_primer.py - Different use cases with Pandas DataFrame that typically come up in the Data Science Pipeline
+3. data_pandas_essential_features - Overview in code of essential features utilized in Pandas throughout the Data Science Pipeline
 #### Machine Learning Scripts
 1. linear_regression_sgd.py - Linear Regression with Stoichastic Gradient Descent using the red_wine_quality.csv data set (provided by UCI data repository)
 2. logistic_regression_sgd.py - Logistic Regression with Stoichastic Gradient Descent using the diabetes.csv data set (provided by UCI data repository)
