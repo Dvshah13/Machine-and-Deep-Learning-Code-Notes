@@ -121,4 +121,42 @@ tweets = DataFrame(data['results'], columns=tweet_fields)
 print tweets # Shows we've pass data to DataFrame format
 print tweets.ix # Each row in the DataFrame now has the extracted data from each tweet
 
-# Databases - 
+# Databases - You can load information with SQL-based relational databases (SQL Server, PostGres, MySQL) or non-SQL (mongodb)
+# Loading data from SQL into a DataFrame is fairly straightforward, and pandas has some functions to simplify the process.
+# You can use an in-memory SQLite database using Python's built-in sqlite3 driver:
+import sqlite3
+query = """
+CREATE TABLE test
+(a VARCHAR(20), b VARCHAR(20), c REAL, d INTEGER
+); """
+con = sqlite3.connect(':memory:')
+con.execute(query)
+con.commit()
+# Insert a few rows of data
+data = [('Atlanta', 'Georgia', 1.25, 6), ('Tallahassee', 'Florida', 2.6, 3), ('Sacramento', 'California', 1.7, 5)]
+stmt = "INSERT INTO test VALUES(?, ?, ?, ?)"
+con.executemany(stmt, data)
+con.commit()
+# You can pass the list of tuples to the DataFrame constructor, but you also need the column names, contained in the cursor's description attribute
+print cursor.description
+print DataFrame(rows, columns=zip(*cursor.description)[0])
+# This is a bit of munging that you'd rather not repeat each time you query the database.  Pandas has a read_frame function in its pandas.io.sql module that simplifies the process.  Just pass the select statement and the connection object
+import pandas.io.sql as sql
+print sql.read_frame('select * from test', con)
+# Storing and Loading Data in MongoDB
+import pymongo
+con = pymongo.Connection('localhost', port=27017)
+# Documents stored in MongoDB are found in collections inside databases.  Each running instance of the MongoDB server can have multiple databases and each database can have multiple collections.  An example, to store the Twitter API data from earlier in the chapter.
+# Access the (currently empty) tweets collection:
+tweets = con.db.tweets
+# Load the list of tweets and write each of them to the collection using tweets.save (writes the Python dict to MongoDB):
+import requests, json
+url = 'http://search.twitter.com/search.json?q=python%20pandas'
+data = json.loads(requests.get(url).text)
+for tweet in data['results']:
+    tweets.save(tweet)
+# If you wanted all my tweets from collection, you can query the collection with the following:
+cursor = tweets.find({'from_user': 'wesmckinn'}) # the cursor returned is an iterator that yields each document as a dict.
+# You can convert this into a DataFrame, optionally extracting a subset of the data fields in each tweet:
+tweet_fields = ['created_at', 'from_user', 'id', 'text']
+result = DataFrame(list(cursor), columns=tweet_fields) 
