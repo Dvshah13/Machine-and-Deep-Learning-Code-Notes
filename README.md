@@ -21,6 +21,7 @@
 15. evaluation_hyper-parameters-optimization.py - Extending cross-validation to find the best hyper-parameters to generalize our test dataset
 16. evaluation_custom-scoring-function-grid-search-runtime.py - Building custom scoring functions when the predefined functions may not perform well in your domain and how to reduce grid search runtime in instances where the data or grid search space is large by using RandomizedGridSearchCV
 17. data_evaluation_feature-selection.py - Demonstrating various techniques of feature selection including, univariate selection, recursive elimination, stability and L1-based selection
+18. data_wrangling_transform.py - 
 #### Data Science Libraries Basic Functionality
 1. data_pandas_series_primer.py - Different use cases with Pandas Series that typically come up in the Data Science Pipeline
 2. data_pandas_dataframe_primer.py - Different use cases with Pandas DataFrame that typically come up in the Data Science Pipeline
